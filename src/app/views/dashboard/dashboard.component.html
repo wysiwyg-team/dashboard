@@ -1,0 +1,139 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <!--summary of call stats-->
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h4>Summary of Call Stats</h4></div>
+                        <div class="card-body"><p class="text-center">Company: Wywy</p>
+                            <div class="row">
+                                <div class="col-md-4"><h5>12</h5><span>Total Calls</span></div>
+                                <div class="col-md-4"><h5>83 &#37;</h5><span>Answerred</span></div>
+                                <div class="col-md-4"><h5>17 &#37;</h5><span>Not Answerred</span></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-4"><h5>18m:33s</h5><span>Average Duration</span></div>
+                                <div class="col-md-4"><h5>100 &#37;</h5><span>Inbound</span></div>
+                                <div class="col-md-4"><h5>0 &#37;</h5><span>Outbound</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Tickets by month-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h4>Wywy Tickets by Month (Last 12 months)</h4></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="chart-wrapper">
+                                        <canvas baseChart class="chart"
+                                                [datasets]="barChartData"
+                                                [labels]="barChartLabels"
+                                                [options]="barChartOptions"
+                                                [legend]="barChartLegend"
+                                                [chartType]="barChartType"
+                                                (chartHover)="chartHovered($event)"
+                                                (chartClick)="chartClicked($event)"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Average tickets per day-->
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h5>Wywy Avg Tickets per Day</h5></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="chart-wrapper">
+                                        <canvas baseChart class="chart"
+                                                [datasets]="barChart1Data"
+                                                [labels]="barChart1Labels"
+                                                [options]="barChart1Options"
+                                                [legend]="barChart1Legend"
+                                                [chartType]="barChart1Type"
+                                                (chartHover)="chart1Hovered($event)"
+                                                (chartClick)="chart1Clicked($event)"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>CallRail Average Call Duration (Last 500 calls)</h5>
+                </div>
+                <div class="card-body"><p class="text-center">Company: Wywy</p>
+                    <progressbar class="progress progress-striped active" [value]="20" [max]="100" type="danger">20 %</progressbar>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Ticket Stats today-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+                <div class="card-header">
+                    <h5>Wywy Tickets stats today</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-primary">
+                                <div class="card-body pb-0 text-center mb-4" style="height:70px;">
+                                    <div class="text-value">13</div>
+                                    <div>New</div>
+                                </div>
+                            </div>
+                        </div><!--/.col-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-info">
+                                <div class="card-body pb-0 text-center mb-4">
+                                    <div class="text-value">9</div>
+                                    <div>Open</div>
+                                </div>
+                            </div>
+                        </div><!--/.col-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-warning">
+                                <div class="card-body pb-0 text-center mb-4" style="height:70px;">
+                                    <div class="text-value">7</div>
+                                    <div>Pending</div>
+                                </div>
+                            </div>
+                        </div><!--/.col-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-white bg-danger">
+                                <div class="card-body pb-0 text-center mb-4">
+                                    <div class="text-value">31</div>
+                                    <div>Closed</div>
+                                </div>
+                            </div>
+                        </div><!--/.col-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
